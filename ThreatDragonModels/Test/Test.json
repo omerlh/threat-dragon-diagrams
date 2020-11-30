@@ -8,8 +8,8 @@
     "diagrams": [
       {
         "title": "test",
-        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
-        "diagramType": "STRIDE",
+        "thumbnail": "./public/content/images/thumbnail.linddun.jpg",
+        "diagramType": "LINDDUN",
         "id": 0,
         "diagramJson": {
           "cells": [
@@ -21,7 +21,7 @@
               },
               "position": {
                 "x": 50,
-                "y": 50
+                "y": 51
               },
               "angle": 0,
               "id": "fbc6d85f-e7cd-4703-b85b-e58a52c29c80",
