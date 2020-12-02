@@ -64,16 +64,38 @@
               "angle": 0,
               "id": "09a2b010-accd-4ff5-99a2-b72d2bf7e53d",
               "z": 2,
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "ruleId": "c1377855-ea20-4c97-8861-f95c364fb8d2",
+                  "title": "Privilege escalation by reported",
+                  "type": "Elevation of privilege",
+                  "modelType": "STRIDE",
+                  "status": "Open",
+                  "severity": "High",
+                  "description": "Attacker can gain access to our cluster",
+                  "mitigation": "Move to workload identity\nVerify no RCE for fluentd"
+                },
+                {
+                  "ruleId": "edb05d76-a695-455f-947b-7d67b78bc31d",
+                  "title": "Reports flood fluentd",
+                  "type": "Denial of service",
+                  "modelType": "STRIDE",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "description": "A generic DoS threat",
+                  "mitigation": "Rate limits in ingress by ip.\nThrottling in flluentd."
+                }
+              ],
               "attrs": {
                 ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
+                  "class": "element-shape hasOpenThreats isInScope"
                 },
                 "text": {
                   "text": "fluentd"
                 },
                 ".element-text": {
-                  "class": "element-text hasNoOpenThreats isInScope"
+                  "class": "element-text hasOpenThreats isInScope"
                 }
               }
             },
@@ -91,6 +113,18 @@
               "id": "3ce07cdb-44d1-4cbe-9983-272833ba5b5f",
               "z": 3,
               "hasOpenThreats": false,
+              "threats": [
+                {
+                  "ruleId": "edb05d76-a695-455f-947b-7d67b78bc31d",
+                  "title": "Logs flooding",
+                  "type": "Denial of service",
+                  "modelType": "STRIDE",
+                  "status": "Mitigated",
+                  "severity": "Low",
+                  "description": "Costs $$$",
+                  "mitigation": "Set limits on logz.io account."
+                }
+              ],
               "attrs": {
                 ".element-shape": {
                   "class": "element-shape hasNoOpenThreats isInScope"
