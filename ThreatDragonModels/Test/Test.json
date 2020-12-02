@@ -8,37 +8,11 @@
     "diagrams": [
       {
         "title": "test",
-        "thumbnail": "./public/content/images/thumbnail.linddun.jpg",
-        "diagramType": "LINDDUN",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "diagramType": "STRIDE",
         "id": 0,
         "diagramJson": {
           "cells": [
-            {
-              "type": "tm.Process",
-              "size": {
-                "width": 100,
-                "height": 100
-              },
-              "position": {
-                "x": 50,
-                "y": 51
-              },
-              "angle": 0,
-              "id": "fbc6d85f-e7cd-4703-b85b-e58a52c29c80",
-              "z": 1,
-              "hasOpenThreats": false,
-              "attrs": {
-                ".element-shape": {
-                  "class": "element-shape hasNoOpenThreats isInScope"
-                },
-                "text": {
-                  "text": "process 0"
-                },
-                ".element-text": {
-                  "class": "element-text hasNoOpenThreats isInScope"
-                }
-              }
-            },
             {
               "type": "tm.Actor",
               "size": {
@@ -46,11 +20,49 @@
                 "height": 80
               },
               "position": {
-                "x": 33,
-                "y": 359
+                "x": 23,
+                "y": 62
               },
               "angle": 0,
-              "id": "069710bf-07a7-4ce2-835e-88aaf2b43885",
+              "id": "2ddf42df-baca-4695-a551-4bc7eead33ce",
+              "z": 1,
+              "hasOpenThreats": false,
+              "threats": [
+                {
+                  "ruleId": "b2a6d40d-d3f8-4750-8e4d-c02cc84b13dc",
+                  "title": "Spoof violation report",
+                  "type": "Spoofing",
+                  "modelType": "STRIDE",
+                  "status": "Mitigated",
+                  "severity": "Low",
+                  "description": "Send report from spoofed user agent",
+                  "mitigation": "Accepted risk - doesn't really matter for the report."
+                }
+              ],
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "Browser"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 460,
+                "y": 37
+              },
+              "angle": 0,
+              "id": "09a2b010-accd-4ff5-99a2-b72d2bf7e53d",
               "z": 2,
               "hasOpenThreats": false,
               "attrs": {
@@ -58,10 +70,100 @@
                   "class": "element-shape hasNoOpenThreats isInScope"
                 },
                 "text": {
-                  "text": "actor 1"
+                  "text": "fluentd"
                 },
                 ".element-text": {
                   "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Store",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 720,
+                "y": 49
+              },
+              "angle": 0,
+              "id": "3ce07cdb-44d1-4cbe-9983-272833ba5b5f",
+              "z": 3,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "logz.io"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Boundary",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "x": 363,
+                "y": 10
+              },
+              "target": {
+                "x": 360,
+                "y": 277
+              },
+              "vertices": [],
+              "id": "efac62e8-8206-4c20-b657-fd790feafe28",
+              "z": 4,
+              "attrs": {}
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "id": "2ddf42df-baca-4695-a551-4bc7eead33ce"
+              },
+              "target": {
+                "id": "09a2b010-accd-4ff5-99a2-b72d2bf7e53d"
+              },
+              "vertices": [],
+              "id": "d932181d-18bb-4411-87a7-a1dac3ee5717",
+              "labels": [
+                {
+                  "position": {
+                    "distance": 0.535341419308738,
+                    "offset": -3.309545501236854
+                  },
+                  "attrs": {
+                    "text": {
+                      "text": "CSP report",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 5,
+              "hasOpenThreats": false,
+              "protocol": "HTTP",
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
                 }
               }
             },
@@ -73,37 +175,30 @@
               },
               "smooth": true,
               "source": {
-                "x": 104,
-                "y": 356
+                "id": "09a2b010-accd-4ff5-99a2-b72d2bf7e53d"
               },
               "target": {
-                "id": "fbc6d85f-e7cd-4703-b85b-e58a52c29c80"
+                "id": "3ce07cdb-44d1-4cbe-9983-272833ba5b5f"
               },
-              "vertices": [
-                {
-                  "x": 104,
-                  "y": 280
-                },
-                {
-                  "x": 108,
-                  "y": 211
-                }
-              ],
-              "id": "cc34fdbb-f779-4a65-9917-8559ae05e12b",
+              "vertices": [],
+              "id": "b8c30b37-d172-4bea-988d-5dfd61b2cd5e",
               "labels": [
                 {
                   "position": 0.5,
                   "attrs": {
                     "text": {
-                      "text": "flow 2",
+                      "text": "logs",
                       "font-weight": "400",
                       "font-size": "small"
                     }
                   }
                 }
               ],
-              "z": 3,
+              "z": 6,
               "hasOpenThreats": false,
+              "protocol": "HTTPS",
+              "isEncrypted": true,
+              "isPublicNetwork": true,
               "attrs": {
                 ".marker-target": {
                   "class": "marker-target hasNoOpenThreats isInScope"
@@ -112,12 +207,32 @@
                   "class": "connection hasNoOpenThreats isInScope"
                 }
               }
+            },
+            {
+              "type": "tm.Boundary",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": true,
+              "source": {
+                "x": 655,
+                "y": 1
+              },
+              "target": {
+                "x": 634,
+                "y": 226
+              },
+              "vertices": [],
+              "id": "b3454786-ecc6-4575-ba90-324d9d16563b",
+              "z": 7,
+              "attrs": {}
             }
           ]
         },
         "size": {
           "height": 590,
-          "width": 790
+          "width": 1061
         }
       }
     ],
