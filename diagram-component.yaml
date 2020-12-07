@@ -4,6 +4,7 @@ metadata:
   name: threat-dragon
   annotations:
     'owasp.org/threat-dragon-repo': "omerlh/threat-dragon-diagrams"
+    'owasp.org/threat-dragon-location': "ThreatDragonModels/Test/Test.json"
   description: Artist Lookup
   tags:
     - java
