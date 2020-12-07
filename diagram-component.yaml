@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: threat-dragon
+  annotations:
+    'owasp.org/threat-dragon-repo': "omerlh/threat-dragon-diagrams"
+  description: Artist Lookup
+  tags:
+    - java
+    - data
+spec:
+  type: service
+  lifecycle: experimental
+  owner: team-a
